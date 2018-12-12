@@ -3,7 +3,7 @@
 body {
   @include body-font;
   padding-top: 54px;
-  color: $gray-600;
+  color: $mygray;
 }
 @media (min-width: 992px) {
   body {
@@ -48,6 +48,14 @@ p.lead {
   @include heading-font;
   font-size: 1.5rem;
 }
+
+.mypubul{
+    li{
+        margin-left: 0rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
 
 .social-icons {
   a {
