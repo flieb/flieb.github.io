@@ -21,6 +21,13 @@
     <!-- Custom styles for this template -->
     <link href="css/resume.min.css" rel="stylesheet">
 
+    <!-- mathjax -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
   </head>
 
   <body id="page-top">
@@ -75,6 +82,9 @@
             <a href="https://linkedin.com/in/florian-lieb-9a9109103/">
               <i class="fab fa-linkedin-in"></i>
             </a>
+            <a href="https://www.xing.com/profile/Florian_Lieb10/">
+              <i class="fab fa-xing"></i>
+            </a>
             <a href="https://github.com/flieb/">
               <i class="fab fa-github"></i>
             </a>
@@ -90,7 +100,14 @@
             <h3 class=mb-4>Magnetic Particle Imaging</h3>
             <p>Magnetic Particle Imaging (MPI) is a new tomographic imaging technique to visualize the spatial concentration of iron oxide nanoparticles. In contrast to MRI where magnetic fields are used to measure the response of a body's hydrogen atoms, MPI is a tracer based method. Hence, morphological features can not be displayed. With a spatial resolution in the sub-millimeter range as well as an acquisition time in the range of milliseconds, however, it is better suited for imaging fast dynamic processes. These processes may include blood flow visualization for coronary artery diseases or cancer detection in targeted moceluar imaging. </p>    
             
-          
+            <p>The spatial distribution of the magnetic tracer material can be determined by applying external magnetic fields (a drive and a selection field) and measuring magnetization changes of the tracer. The relation between the actual particle concentration $c$ and the voltage $u_p$ induced in the receive coil is linear <a href="#" data-toggle="tooltip" data-html="true" title="Knopp and Buzug, 2012. <em>Magnetic Particle Imaging - 
+                An Introduction to Imaging Principles and Scanner Instrumentation.</em> Springer-Verlag Berlin Heidelberg.">[1]</a>: 
+                $$u_p(t) = \int_\Omega S(r,t)c(r)d^3r.$$
+            Usually, the spatial positions $r$ are discretized into $N$ sampling points and with $S$ denoting the MPI system matrix the following linear system of equations can be obtained:
+                $$u=Sc.$$
+            The relation between particle position and corresponding signal response is currently acquired by explicit measurements. This implies that a delta sample of tracer materical is moved to all spatial positions ($r$) and the induced voltage is captured and stored in $S$. For the practical purpose of spectral filtering, the system matrix is commonly represented in the Fourier domain. </p>
+            
+            <p>A major disadvantage, apart from the time consuming acquisition, is the superposition of the measured signal and the background noise of the scanner. In current applications this background is simply subtracted from the system matrix, implying that empty scanner measurements have to be taken during system matrix acquisition, as well as from the actual particle signal. In the BMBF project "(MPI)² - Modellbasierte Parameteridentifikation in Magnetic Particle Imaging: Nichtlineare Rekonstruktionsverfahren für Innovationen in medizinischen Anwendungen" more sophisticated approaches for the separation of excitation and particle signal are currently derived and evaluated. </p>
 
         </div>
       </section>
@@ -344,7 +361,8 @@ using a novel spike detection algorithm". <i>In Biosensors and Bioelectronics</i
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
+    
+    
     <!-- Custom scripts for this template -->
     <script src="js/resume.min.js"></script>
 
